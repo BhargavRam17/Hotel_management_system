@@ -62,7 +62,7 @@
 <body>  
     <div class="container">  
         <h1>Customer Check-In</h1>  
-        <form id="checkInForm" action="generateBill.html">  
+        <form id="checkInForm" action="generatebill.html">  
             <input type="text" id="roomTypeInput" placeholder="Room Type" disabled><br>  
             <input type="date" placeholder="Check-In Date" required><br>  
             <input type="time" placeholder="Check-In Time" required><br>  
@@ -80,7 +80,7 @@
         const roomType = getQueryParam('roomType');  
         document.getElementById('roomTypeInput').value = roomType ? roomType : 'Not specified';  
 
-        
+
         const form = document.getElementById('checkInForm');  
         const hiddenInput = document.createElement('input');  
         hiddenInput.type = 'hidden';  
