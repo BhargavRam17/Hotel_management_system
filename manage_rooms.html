@@ -14,29 +14,29 @@
             justify-content: center;
             align-items: flex-start;
             height: 100vh;
-            background-image: url('Login.jpg'); /* Replace with your image path */
+            background-image: url('Login.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            position: relative; /* Required for absolute positioning of the button */
+            position: relative;
         }
 
         .logout-button {
             position: absolute;
-            top: 20px; /* Adjust the position */
-            right: 20px; /* Adjust the position */
+            top: 20px; 
+            right: 20px;
             padding: 10px 15px;
-            background-color: #e74c3c; /* Red color for logout */
+            background-color: #e74c3c;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
-            z-index: 1000; /* Ensure the button is above other elements */
+            z-index: 1000;
         }
 
         .logout-button:hover {
-            background-color: #c0392b; /* Darker red on hover */
+            background-color: #c0392b; 
         }
 
         .container {
@@ -44,9 +44,9 @@
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 600px; /* Adjusted for better layout */
+            width: 600px;
             text-align: center;
-            margin-top: 70px; /* Added margin to keep it centered */
+            margin-top: 70px;
         }
 
         h2 {
@@ -96,7 +96,7 @@
         }
 
         input, select {
-            width: calc(100% - 16px); /* Full width minus padding */
+            width: calc(100% - 16px);
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -105,11 +105,10 @@
     </style>
 </head>
 <body>
-    <button class="logout-button" onclick="logout()">Logout</button> <!-- Moved outside the container -->
+    <button class="logout-button" onclick="logout()">Logout</button>
     <div class="container">
         <h2>Manage Room Data</h2>
 
-        <!-- Room List -->
         <h3>Existing Rooms</h3>
         <table>
             <thead>
@@ -121,11 +120,11 @@
                 </tr>
             </thead>
             <tbody id="roomList">
-                <!-- Existing room data will be added here dynamically -->
+                
             </tbody>
         </table>
 
-        <!-- Add New Room -->
+        
         <h3>Add New Room</h3>
         <form id="addRoomForm" onsubmit="return addRoom()">
             <label for="roomNumber">Room Number:</label>
@@ -148,13 +147,13 @@
     </div>
 
     <script>
-        // Sample room data
+        
         let rooms = [
             { number: "101", type: "AC", status: "Available" },
             { number: "102", type: "Non-AC", status: "Occupied" }
         ];
 
-        // Display rooms in the table
+        
         function displayRooms() {
             const roomList = document.getElementById('roomList');
             roomList.innerHTML = '';
@@ -172,7 +171,7 @@
             });
         }
 
-        // Add new room
+        
         function addRoom() {
             const roomNumber = document.getElementById('roomNumber').value;
             const roomType = document.getElementById('roomType').value;
@@ -182,22 +181,22 @@
             displayRooms();
 
             document.getElementById('addRoomForm').reset();
-            return false; // Prevent form submission
+            return false; 
         }
 
-        // Delete room by index
+    
         function deleteRoom(index) {
             rooms.splice(index, 1);
             displayRooms();
         }
 
-        // Logout function
+        
         function logout() {
-            // Redirect to the login page or perform any logout logic
-            window.location.href = "index.html"; // Change to your login page
+            
+            window.location.href = "index.html"; 
         }
 
-        // Initial display
+     
         displayRooms();
     </script>
 </body>

@@ -14,7 +14,7 @@
             justify-content: center;  
             align-items: center;  
             height: 100vh;  
-            background-image: url('Login.jpg'); /* Replace with your image file */  
+            background-image: url('Login.jpg'); 
             background-size: cover;  
             background-position: center;  
             background-repeat: no-repeat;  
@@ -76,11 +76,11 @@
             return urlParams.get(param);  
         }  
 
-        // Get the room type from the query parameter  
+
         const roomType = getQueryParam('roomType');  
         document.getElementById('roomTypeInput').value = roomType ? roomType : 'Not specified';  
 
-        // Use hidden input to pass the room type onto the Generate Bill page  
+        
         const form = document.getElementById('checkInForm');  
         const hiddenInput = document.createElement('input');  
         hiddenInput.type = 'hidden';  

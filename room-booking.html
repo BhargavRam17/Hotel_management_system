@@ -14,30 +14,30 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('Login.jpg'); /* Replace with your image file */
+            background-image: url('Login.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            position: relative; /* Required for absolute positioning of the button */
+            position: relative;
         }
 
         .logout-button {
-            position: fixed; /* Changed to fixed */
-            top: 20px; /* Adjust the vertical position */
-            right: 20px; /* Adjust the horizontal position */
-            padding: 8px 12px; /* Smaller padding for a smaller button */
-            background-color: #e74c3c; /* Red color for logout */
+            position: fixed;
+            top: 20px; 
+            right: 20px;
+            padding: 8px 12px;
+            background-color: #e74c3c;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
-            z-index: 1000; /* Ensure the button is above other elements */
-            font-size: 14px; /* Smaller font size */
+            z-index: 1000;
+            font-size: 14px;
         }
 
         .logout-button:hover {
-            background-color: #c0392b; /* Darker red on hover */
+            background-color: #c0392b;
         }
 
         .container {
@@ -80,7 +80,7 @@
     </style>
 </head>
 <body>
-    <button class="logout-button" onclick="logout()">Logout</button> <!-- Moved outside the container -->
+    <button class="logout-button" onclick="logout()">Logout</button>
     <div class="container">
         <h1>Book Your Room</h1>
         <h3>Select Room Type</h3>
@@ -92,10 +92,10 @@
     </div>
 
     <script>
-        // Logout function
+        
         function logout() {
-            // Redirect to the login page or perform any logout logic
-            window.location.href = "index.html"; // Change to your login page
+            
+            window.location.href = "index.html";
         }
     </script>
 </body>

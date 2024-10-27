@@ -7,31 +7,31 @@
     <style>  
         body {  
             font-family: Arial, sans-serif;  
-            background-color: #4d3e2b; /* Dark background color */  
+            background-color: #4d3e2b; 
             margin: 0;  
             padding: 0;  
             display: flex;  
             justify-content: center;  
             align-items: center;  
             height: 100vh;  
-            background-image: url('Login.jpg'); /* Replace with your image file */  
-            background-size: cover; /* Ensures the background covers the whole page */  
-            background-position: center; /* Centers the image */  
+            background-image: url('Login.jpg');  
+            background-size: cover;  
+            background-position: center;  
             background-repeat: no-repeat;  
         }  
 
         .container {  
-            background-color: rgba(229, 229, 221, 0.9); /* Semi-transparent background */  
-            padding: 40px; /* Increased padding for more space */  
+            background-color: rgba(229, 229, 221, 0.9); 
+            padding: 40px; 
             border-radius: 8px;  
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  
             width: 300px;  
-            text-align: center; /* Centered text */  
+            text-align: center;
         }  
 
         h1 {  
-            color: #834f43; /* Color for h1 matches login page */  
-            margin-bottom: 20px; /* Adds space below the heading */  
+            color: #834f43;  
+            margin-bottom: 20px;
         }  
 
         label {  
@@ -42,7 +42,7 @@
         input[type="text"], input[type="password"] {  
             width: 100%;  
             padding: 8px;  
-            margin-bottom: 20px; /* Adds space between inputs */  
+            margin-bottom: 20px;
             box-sizing: border-box;  
             border: 1px solid #ccc;  
             border-radius: 4px;  
@@ -51,36 +51,35 @@
         button {  
             width: 100%;  
             padding: 10px;  
-            background-color: #252325; /* Button background color */  
-            color: rgb(253, 246, 246); /* Button text color */  
+            background-color: #252325;  
+            color: rgb(253, 246, 246); 
             border: none;  
             border-radius: 4px;  
             cursor: pointer;  
-            font-size: 16px; /* Increase font size for better readability */  
+            font-size: 16px; 
         }  
 
         button:hover {  
-            background-color: #16dc5c; /* Button hover color */  
+            background-color: #16dc5c;
         }  
 
         p {  
-            margin-top: 10px; /* Adds space above the paragraph */  
+            margin-top: 10px;
         }  
 
         a {  
-            color: #007BFF; /* Link color */  
-            text-decoration: none; /* Removes underline */  
+            color: #007BFF;
+            text-decoration: none; 
         }  
 
         a:hover {  
-            text-decoration: underline; /* Underline on hover for visibility */  
+            text-decoration: underline; 
         }  
     </style>  
     <script>  
         function handleSignup(event) {  
-            event.preventDefault(); // Prevents the default form submission  
-            // Here you would usually handle the signup process (like saving data)  
-            // For now, simply redirect to login page  
+            event.preventDefault();
+             
             window.location.href = "customer-login.html";  
         }  
     </script>  
@@ -88,7 +87,7 @@
 <body>  
     <div class="container">  
         <h1>Customer Signup</h1>  
-        <!-- Signup Form -->  
+          
         <form onsubmit="handleSignup(event)">  
             <label for="username">Username:</label>  
             <input type="text" id="username" name="username" required>  
@@ -99,7 +98,7 @@
             <button type="submit">Sign Up</button>  
         </form>  
         
-        <!-- Link to Customer Login Page -->  
+      
         <p>Already have an account? <a href="customer-login.html">Login here</a>.</p>  
     </div>  
 </body>  

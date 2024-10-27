@@ -14,7 +14,7 @@
             justify-content: center;  
             align-items: center;  
             height: 100vh;  
-            background-image: url('Login.jpg'); /* Replace with your image path */  
+            background-image: url('Login.jpg');
             background-size: cover;  
             background-position: center;  
             background-repeat: no-repeat;  
@@ -86,23 +86,21 @@
     <script>  
         function adminLogin() {  
             const username = document.getElementById('username').value;  
-            const password = document.getElementById('password').value;  
-            
-            // Hardcoded credentials for admin  
+            const password = document.getElementById('password').value;    
             const adminUsername = "Ram";  
             const adminPassword = "7159";  
 
-            console.log("Attempting login:", username, password); // Debugging line  
+            console.log("Attempting login:", username, password); 
 
             if (username === adminUsername && password === adminPassword) {  
-                // Redirect to the Manage Room Data page  
-                console.log("Login successful"); // Debugging line  
+
+                console.log("Login successful"); 
                 window.location.href = "manage_rooms.html";  
-                return false; // Prevents form submission (and allows redirection)  
+                return false;  
             } else {  
-                console.log("Invalid credentials"); // Debugging line  
+                console.log("Invalid credentials");  
                 document.getElementById('errorMessage').textContent = "Invalid admin credentials!";  
-                return false; // Prevents form submission  
+                return false; 
             }  
         }  
     </script>  
