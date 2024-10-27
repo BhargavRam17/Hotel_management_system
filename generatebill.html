@@ -1,0 +1,92 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Generate Bill</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #4d3e2b;  
+            margin: 0;  
+            padding: 0;  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh;  
+            background-image: url('Login.jpg'); /* Replace with your image file */  
+            background-size: cover;  
+            background-position: center;  
+            background-repeat: no-repeat;  
+        }  
+
+        .container {  
+            background-color: rgb(229, 229, 221);  
+            padding: 50px;  
+            border-radius: 8px;  
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  
+            width: 400px;  
+            text-align: center;  
+        }  
+
+        h1 {  
+            margin-bottom: 20px;  
+        }  
+
+        p {  
+            margin: 10px 0;  
+            font-size: 16px;  
+        }  
+
+        button {  
+            width: 100%;  
+            padding: 10px;  
+            font-size: 16px;  
+            background-color: #252325;  
+            color: rgb(253, 246, 246);  
+            border: none;  
+            border-radius: 4px;  
+            cursor: pointer;  
+        }  
+
+        button:hover {  
+            background-color: #16dc5c;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <h1>Bill Generated</h1>  
+        <p id="roomTypeDisplay"></p>  
+        <p id="billAmountDisplay"></p>  
+        <a href="customerCheckOut.html"><button>Next</button></a>  
+    </div>  
+
+    <script>  
+        // Function to get query parameters  
+        function getQueryParam(param) {  
+            const urlParams = new URLSearchParams(window.location.search);  
+            return urlParams.get(param);  
+        }  
+
+        // Display selected room type and calculate bill amount  
+        const roomType = getQueryParam('roomType');  
+        const roomTypeDisplay = document.getElementById('roomTypeDisplay');  
+        const billAmountDisplay = document.getElementById('billAmountDisplay');  
+
+        roomTypeDisplay.textContent = roomType ? `Room Type: ${roomType}` : 'Room Type: Not selected';  
+
+        // Determine the bill amount based on room type  
+        let billAmount;  
+        if (roomType === 'AC') {  
+            billAmount = 1700;  
+        } else if (roomType === 'Non-AC') {  
+            billAmount = 1200;  
+        } else {  
+            billAmount = 0; // Default amount if no valid room type is found  
+        }  
+
+        billAmountDisplay.textContent = `Your bill is ₹${billAmount}`;  
+    </script>  
+</body>  
+</html>

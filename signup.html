@@ -1,0 +1,106 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Customer Signup</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #4d3e2b; /* Dark background color */  
+            margin: 0;  
+            padding: 0;  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh;  
+            background-image: url('Login.jpg'); /* Replace with your image file */  
+            background-size: cover; /* Ensures the background covers the whole page */  
+            background-position: center; /* Centers the image */  
+            background-repeat: no-repeat;  
+        }  
+
+        .container {  
+            background-color: rgba(229, 229, 221, 0.9); /* Semi-transparent background */  
+            padding: 40px; /* Increased padding for more space */  
+            border-radius: 8px;  
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  
+            width: 300px;  
+            text-align: center; /* Centered text */  
+        }  
+
+        h1 {  
+            color: #834f43; /* Color for h1 matches login page */  
+            margin-bottom: 20px; /* Adds space below the heading */  
+        }  
+
+        label {  
+            display: block;  
+            margin-bottom: 5px;  
+        }  
+
+        input[type="text"], input[type="password"] {  
+            width: 100%;  
+            padding: 8px;  
+            margin-bottom: 20px; /* Adds space between inputs */  
+            box-sizing: border-box;  
+            border: 1px solid #ccc;  
+            border-radius: 4px;  
+        }  
+
+        button {  
+            width: 100%;  
+            padding: 10px;  
+            background-color: #252325; /* Button background color */  
+            color: rgb(253, 246, 246); /* Button text color */  
+            border: none;  
+            border-radius: 4px;  
+            cursor: pointer;  
+            font-size: 16px; /* Increase font size for better readability */  
+        }  
+
+        button:hover {  
+            background-color: #16dc5c; /* Button hover color */  
+        }  
+
+        p {  
+            margin-top: 10px; /* Adds space above the paragraph */  
+        }  
+
+        a {  
+            color: #007BFF; /* Link color */  
+            text-decoration: none; /* Removes underline */  
+        }  
+
+        a:hover {  
+            text-decoration: underline; /* Underline on hover for visibility */  
+        }  
+    </style>  
+    <script>  
+        function handleSignup(event) {  
+            event.preventDefault(); // Prevents the default form submission  
+            // Here you would usually handle the signup process (like saving data)  
+            // For now, simply redirect to login page  
+            window.location.href = "customer-login.html";  
+        }  
+    </script>  
+</head>  
+<body>  
+    <div class="container">  
+        <h1>Customer Signup</h1>  
+        <!-- Signup Form -->  
+        <form onsubmit="handleSignup(event)">  
+            <label for="username">Username:</label>  
+            <input type="text" id="username" name="username" required>  
+            
+            <label for="password">Password:</label>  
+            <input type="password" id="password" name="password" required>  
+            
+            <button type="submit">Sign Up</button>  
+        </form>  
+        
+        <!-- Link to Customer Login Page -->  
+        <p>Already have an account? <a href="customer-login.html">Login here</a>.</p>  
+    </div>  
+</body>  
+</html>

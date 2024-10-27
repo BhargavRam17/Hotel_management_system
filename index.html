@@ -1,0 +1,98 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Welcome to ABC Hotel</title>  
+    <style>  
+        body {  
+            background-image: url('index.png'); /* Replace with your image path */  
+            background-size: cover;  
+            background-position: center;  
+            background-repeat: no-repeat;  
+            height: 100vh;  
+            font-family: Arial, sans-serif;  
+            display: flex;  
+            flex-direction: column;  
+            align-items: center;  
+            margin: 0;  
+        }  
+
+        h1 {  
+            color: #2d242d;  
+            font-size: 4em;  
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+            margin-top: 100px;  
+            margin-bottom: 20px;  
+        }  
+
+        .container {  
+            text-align: center;  
+            background-color: rgba(229, 229, 221, 0.9);  
+            padding: 30px;  
+            border-radius: 10px;  
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  
+            max-width: 80%;  
+            margin-top: 200px; /* Increased to bring container down */  
+        }  
+
+        h2 {  
+            color: #252120;  
+            font-size: 2em;  
+            margin-top: 10px;  
+            margin-bottom: 20px;  
+        }  
+
+        .option-container {  
+            background-color: rgba(249, 243, 243, 0.9);  
+            border-radius: 10px;  
+            padding: 15px 30px;  
+            margin: 15px;  
+            display: inline-block;  
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+            transition: transform 0.2s;  
+        }  
+
+        .option-container:hover {  
+            transform: translateY(-5px);  
+        }  
+
+        button {  
+            padding: 10px 25px;  
+            font-size: 16px;  
+            border: none;  
+            border-radius: 5px;  
+            background-color: #252325;  
+            color: #fdf6f6;  
+            cursor: pointer;  
+            transition: background-color 0.3s;  
+        }  
+
+        button:hover {  
+            background-color: #16dc5c;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <h1>Welcome to ABC Hotel</h1>  
+
+    <div class="container">  
+        <h2>Select Your Role</h2>  
+        
+        <!-- Container for Customer Signup -->  
+        <div class="option-container">  
+            <a href="signup.html"><button>Customer</button></a>  
+        </div>  
+        
+        <!-- Container for Admin Login -->  
+        <div class="option-container">  
+            <a href="admin-login.html"><button>Admin</button></a>  
+        </div>  
+        
+        <!-- Container for Reception Login -->  
+        <div class="option-container">  
+            <a href="reception-login.html"><button>Reception</button></a>  
+        </div>  
+    </div>  
+</body>  
+</html>

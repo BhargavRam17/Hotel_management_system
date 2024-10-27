@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Room Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4d3e2b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            background-image: url('Login.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative; /* Required for absolute positioning of the button */
+        }
+
+        .logout-button {
+            position: absolute;
+            top: 20px; /* Adjust the position */
+            right: 20px; /* Adjust the position */
+            padding: 10px 15px;
+            background-color: #e74c3c; /* Red color for logout */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 1000; /* Ensure the button is above other elements */
+        }
+
+        .logout-button:hover {
+            background-color: #c0392b; /* Darker red on hover */
+        }
+
+        .container {
+            background-color: rgb(229, 229, 221);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 600px; /* Adjusted for better layout */
+            text-align: center;
+            margin-top: 70px; /* Added margin to keep it centered */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #252325;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: #252325;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #252325;
+            color: rgb(253, 246, 246);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #16dc5c;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input, select {
+            width: calc(100% - 16px); /* Full width minus padding */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <button class="logout-button" onclick="logout()">Logout</button> <!-- Moved outside the container -->
+    <div class="container">
+        <h2>Manage Room Data</h2>
+
+        <!-- Room List -->
+        <h3>Existing Rooms</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Room Number</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="roomList">
+                <!-- Existing room data will be added here dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Add New Room -->
+        <h3>Add New Room</h3>
+        <form id="addRoomForm" onsubmit="return addRoom()">
+            <label for="roomNumber">Room Number:</label>
+            <input type="text" id="roomNumber" name="roomNumber" required>
+
+            <label for="roomType">Type:</label>
+            <select id="roomType" name="roomType" required>
+                <option value="AC">AC</option>
+                <option value="Non-AC">Non-AC</option>
+            </select>
+
+            <label for="roomStatus">Status:</label>
+            <select id="roomStatus" name="roomStatus" required>
+                <option value="Available">Available</option>
+                <option value="Occupied">Occupied</option>
+            </select>
+
+            <button type="submit">Add Room</button>
+        </form>
+    </div>
+
+    <script>
+        // Sample room data
+        let rooms = [
+            { number: "101", type: "AC", status: "Available" },
+            { number: "102", type: "Non-AC", status: "Occupied" }
+        ];
+
+        // Display rooms in the table
+        function displayRooms() {
+            const roomList = document.getElementById('roomList');
+            roomList.innerHTML = '';
+            rooms.forEach((room, index) => {
+                roomList.innerHTML += `
+                    <tr>
+                        <td>${room.number}</td>
+                        <td>${room.type}</td>
+                        <td>${room.status}</td>
+                        <td>
+                            <button onclick="deleteRoom(${index})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Add new room
+        function addRoom() {
+            const roomNumber = document.getElementById('roomNumber').value;
+            const roomType = document.getElementById('roomType').value;
+            const roomStatus = document.getElementById('roomStatus').value;
+
+            rooms.push({ number: roomNumber, type: roomType, status: roomStatus });
+            displayRooms();
+
+            document.getElementById('addRoomForm').reset();
+            return false; // Prevent form submission
+        }
+
+        // Delete room by index
+        function deleteRoom(index) {
+            rooms.splice(index, 1);
+            displayRooms();
+        }
+
+        // Logout function
+        function logout() {
+            // Redirect to the login page or perform any logout logic
+            window.location.href = "index.html"; // Change to your login page
+        }
+
+        // Initial display
+        displayRooms();
+    </script>
+</body>
+</html>
